@@ -6,10 +6,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Jest tests
-        run: node_modules/.bin/jest
-
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -28,4 +24,4 @@ jobs:
         run: which jest || echo "Jest not found"
 
       - name: Run Jest tests
-        run: npx jest
+        run: node_modules/.bin/jest
