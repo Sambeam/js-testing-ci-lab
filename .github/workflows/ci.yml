@@ -23,5 +23,9 @@ jobs:
       - name: Check Jest Path  # Debugging Step
         run: which jest || echo "Jest not found"
 
+      - name: Grant execute permissions to Jest
+        run: chmod +x node_modules/.bin/jest
+
       - name: Run Jest tests
-        run: node_modules/.bin/jest
+        run: npx jest
+
