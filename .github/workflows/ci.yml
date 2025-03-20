@@ -1,0 +1,21 @@
+name: Jest Tests CI
+
+on: [push, pull_request]  # Run tests on every push or pull request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  # Clones the repo
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16  # Ensures the right Node.js version
+
+      - name: Install dependencies
+        run: npm install  # Installs Jest and other dependencies
+
+      - name: Run Jest tests
+        run: npm test  # Runs the tests
