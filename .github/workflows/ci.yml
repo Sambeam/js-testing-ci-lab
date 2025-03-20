@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Jest tests
-        run: chmod +x node_modules/.bin/jest && node_modules/.bin/jest
+        run: node_modules/.bin/jest
+
 
       - name: Checkout repository
         uses: actions/checkout@v3
